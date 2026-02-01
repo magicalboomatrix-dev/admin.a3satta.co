@@ -33,10 +33,9 @@ import {
 } from "react-icons/md";
 
 const siteOptions = [
-  { label: "A1 Satta", value: "a1satta.vip" },
-  { label: "A3 Satta", value: "a3satta.vip" },
-  { label: "A7 Satta", value: "a7satta.vip" },
-  { label: "B7 Satta", value: "b7satta.vip" },
+  { label: "A3 Satta", value: "a3satta.co" },
+  { label: "A7 Satta", value: "a7satta.bet" },
+  { label: "B7 Satta", value: "b7satta.co" },
 ];
 
 export default function PremiumAdsEditor() {
