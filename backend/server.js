@@ -20,15 +20,13 @@ connectDB();
 const app = express();
 
 const allowedOrigins = [
-  "https://admin.a7satta.vip",
-  "https://a7satta.vip",
-  "https://www.a7satta.vip",
-  "https://www.a3satta.vip",
-  "https://www.a1satta.vip",
-  "https://www.b7satta.vip",
-"https://a3satta.vip",
-  "https://a1satta.vip",
-  "https://b7satta.vip",
+  "https://admin.a3satta.co",
+  "https://a3satta.co",
+  "https://www.a3satta.co",
+  "https://www.a7satta.bet",
+  "https://a7satta.bet",
+  "https://www.b7satta.co",
+  "https://b7satta.co",
   "http://localhost:5173"
 ];
 
@@ -72,5 +70,5 @@ app.use("/api/chart", chartUploadRoutes);
 
 app.use("/api/seo", seoRoutes);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+const PORT = process.env.PORT || 3300;
+app.listen(PORT, () => console.log(`ðŸš€ Server running on port ${PORT}`));
