@@ -514,7 +514,7 @@ export default function PremiumAdsEditor() {
     a.href = link;
     a.target = "_blank";
     a.rel = "noopener noreferrer";
-    a.style.display = "inline-block";
+    // a.style.display = "inline-block";
 
     if (
       isReplace &&
