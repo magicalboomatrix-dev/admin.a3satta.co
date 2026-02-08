@@ -84,23 +84,51 @@ export default function PremiumAdsEditor() {
       id: a.id ?? a._id ?? undefined,
     }));
 
-  // Function to clean HTML before saving - NEW: Removes visual styles but keeps link
   const cleanHtmlForSaving = (html) => {
-    if (!html) return html;
+  if (!html) return html;
 
-    // Create a temporary div to parse the HTML
-    const tempDiv = document.createElement("div");
-    tempDiv.innerHTML = html;
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = html;
 
-    // Remove outline styles from all images
-    const images = tempDiv.querySelectorAll("img");
-    images.forEach((img) => {
-      img.style.outline = "";
-      img.style.outlineOffset = "";
-    });
+  const images = tempDiv.querySelectorAll("img");
 
-    return tempDiv.innerHTML;
-  };
+  images.forEach((img) => {
+    // remove editor outlines
+    img.style.outline = "";
+    img.style.outlineOffset = "";
+
+    const parent = img.parentElement;
+
+    // if image is inside centered container
+    if (
+      parent &&
+      parent.style &&
+      parent.style.textAlign === "center"
+    ) {
+      img.style.display = "block";
+      img.style.margin = "10px auto";
+
+      // unwrap the image
+      parent.replaceWith(img);
+    }
+
+    // right align
+    if (
+      parent &&
+      parent.style &&
+      parent.style.textAlign === "right"
+    ) {
+      img.style.display = "block";
+      img.style.marginLeft = "auto";
+
+      parent.replaceWith(img);
+    }
+  });
+
+  return tempDiv.innerHTML;
+};
+
+ 
 
   // Load ads
   useEffect(() => {
