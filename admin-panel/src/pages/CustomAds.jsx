@@ -634,8 +634,6 @@ export default function PremiumAdsEditor() {
       img.style.maxWidth = "100%";
       img.style.height = "auto";
       img.style.borderRadius = "4px";
-      img.style.margin = "10px 0";
-      img.style.display = "block";
       img.setAttribute("draggable", "false");
 
       // Add click handler
