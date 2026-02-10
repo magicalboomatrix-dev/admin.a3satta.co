@@ -982,6 +982,7 @@ export default function PremiumAdsEditor() {
   disabled={isSaving}
   className="px-4 py-2 bg-blue-600 text-white rounded"
 >
+            <FiSave className="inline mr-2" /> Save All </button>
 
         </div>
       </div>
