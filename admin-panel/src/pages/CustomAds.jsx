@@ -128,8 +128,6 @@ export default function PremiumAdsEditor() {
   return tempDiv.innerHTML;
 };
 
- 
-
   // Load ads
   useEffect(() => {
     async function fetchAds() {
@@ -264,6 +262,20 @@ export default function PremiumAdsEditor() {
       setIsSaving(false);
     }
   };
+
+  const handleSaveAll = async () => {
+  if (isSaving) return;
+  setIsSaving(true);
+
+  try {
+    await handleSectionSave("top");
+    await handleSectionSave("middle");
+    await handleSectionSave("bottom");
+  } finally {
+    setIsSaving(false);
+  }
+};
+
 
   const performSave = async (sectionAds, position) => {
     try {
@@ -966,13 +978,11 @@ export default function PremiumAdsEditor() {
             Preview
           </button>
           <button
-            onClick={() => handleSectionSave(activeSection)}
-            disabled={isSaving}
-            className="px-4 py-2 bg-blue-600 text-white rounded"
-          >
-            <FiSave className="inline mr-2" />
-            Save
-          </button>
+  onClick={handleSaveAll}
+  disabled={isSaving}
+  className="px-4 py-2 bg-blue-600 text-white rounded"
+>
+
         </div>
       </div>
 
